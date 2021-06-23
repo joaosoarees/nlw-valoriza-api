@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:12.4
+    container_name: nlw
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./docker/postgres/data:/var/lib/postgresql/data
+      - ./docker/postgres/backup:/backup
+    networks:
+      - nlwvaloriza
+    environment:
+      - POSTGRES_DB=nlwvaloriza
+      - POSTGRES_USER=nlwvaloriza
+      - POSTGRES_PASSWORD=nlwvaloriza
+
+networks:
+  nlwvaloriza:
+    driver: bridge
