@@ -4,5 +4,9 @@
   "port": 5432,
   "username": "nlwvaloriza",
   "password": "nlwvaloriza",
-  "database": "nlwvaloriza"
+  "database": "nlwvaloriza",
+  "migrations": ["src/database/migrations/*.ts"],
+  "cli": {
+    "migrationsDir": "src/database/migrations"
+  }
 }
